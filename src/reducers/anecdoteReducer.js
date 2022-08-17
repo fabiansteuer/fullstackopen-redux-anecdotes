@@ -19,9 +19,14 @@ const asObject = (anecdote) => {
 
 const initialState = anecdotesAtStart.map(asObject);
 
+export const voteFor = (anecdoteId) => {
+  console.log("Voting for ", anecdoteId);
+  return { type: "VOTE", anecdoteId: anecdoteId };
+};
+
 const reducer = (state = initialState, action) => {
-  console.log("state now: ", state);
-  console.log("action", action);
+  console.log("State before: ", state);
+  console.log("Action", action);
 
   switch (action.type) {
     case "VOTE":
